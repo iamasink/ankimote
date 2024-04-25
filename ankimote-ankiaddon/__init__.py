@@ -23,7 +23,6 @@ from anki.hooks import runHook
 
 import json
 
-import requests, uuid, random
 from os import path
 
 import http.server
@@ -41,18 +40,6 @@ cafftimer=None
 qrvisible=False
 
 lastease = 0
-
-#handle uuid for analytics
-myuuid=''
-uuidpath = USERFILES+'/uuid'
-if path.exists(uuidpath):
-    with open(uuidpath, 'r') as reader:
-        uuidcontent = reader.readline()
-        myuuid = uuidcontent
-else:
-    myuuid = str(uuid.uuid4())
-    with open(uuidpath, 'w') as writer:
-        writer.write(myuuid)
 
 class SimpleAnki(WebSocket):
     def handle(self):
