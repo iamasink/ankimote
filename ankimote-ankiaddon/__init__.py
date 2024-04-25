@@ -253,17 +253,6 @@ def handleMessage(msg):
                 '''
                 mw.web.eval(showHintsJS)
             elif mw.reviewer.card and mw.reviewer.state=='answer':
-                # analytics
-                payloadAnsCard = {
-                    'v': 1,
-                    'tid': 'UA-171633786-4',
-                    'cid': myuuid,
-                    't': 'pageview',
-                    'dp': '/answered_card.html',
-                    'dt': 'answered_card',
-                    'z': random.randint(11111111,99999999),
-                }
-                requests.post("http://www.google-analytics.com/collect", data=payloadAnsCard)
                 # save last ease for feedback
                 if msg=='again':
                     lastease=1
@@ -333,17 +322,6 @@ def runRemote():
         mw.bottomWeb.eval(blurjs)
         mw.toolbarWeb.eval(blurjs)
         qrvisible=True
-        #analytics
-        payloadSession = {
-            'v': 1,
-            'tid': 'UA-171633786-4',
-            'cid': myuuid,
-            't': 'pageview',
-            'dp': '/session.html',
-            'dt': 'session',
-            'z': random.randint(11111111,99999999),
-        }
-        requests.post("http://www.google-analytics.com/collect", data=payloadSession)
     else:
         removeQRandBlur()
 
