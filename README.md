@@ -53,4 +53,4 @@ Tap mode (best in landscape)
 ## Privacy
 
 ~~Ankimote uses Google Analytics to measure anonymized user engagement.~~
-This Ankimote fork doesn't spy on you!
+This Ankimote fork doesn't spy on you! (and doesn't crash if you have pihole, etc.)
